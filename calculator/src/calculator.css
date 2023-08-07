@@ -1,0 +1,129 @@
+.light-theme {
+    --bg-main: white;
+    --bg-primary: black;
+    --bg-calc: orange;
+    --bg-screen: rgb(215, 250, 245);
+    --bg-buttons: black;
+}
+
+.dark-theme {
+    --bg-main: black;
+    --bg-primary: white;
+    --bg-calc: red;
+    --bg-screen: rgb(1, 1, 190);
+    --bg-buttons: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--bg-primary);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.main {
+    /* border: 2px solid red; */
+    width: 300px;
+    background-color: var(--bg-calc);
+    border-radius: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    font-size: 40px;
+}
+
+/* .calculator {
+    border: 2px solid blue;
+} */
+
+.screen {
+    border: 2px solid red;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    height: 130px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: flex-end;
+    flex-direction: column;
+    background-color: var(--bg-screen);
+    overflow: hidden;
+}
+
+.buttons {
+    /* border: 2px solid blue; */
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--bg-buttons);
+}
+
+.row {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row button {
+    height: 100%;
+    width: 25%;
+    border-radius: 25%;
+    color: var(--bg-primary);
+    background-color: var(--bg-main);
+    font-size: 30px;
+}
+
+.equal {
+    flex: 1;
+}
+
+#checkbox {
+    visibility: hidden;
+}
+
+.toggle-label {
+    width: 3rem;
+    height: 2rem;
+    background-color: var(--bg-primary);
+    display: inline-block;
+    position: relative;
+    border-radius: 10rem;
+    cursor: pointer;
+}
+
+.toggle-ball {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--bg-main);
+    display: inline-block;
+    position: absolute;
+    top: .3rem;
+    left: .3rem;
+    transition: all .2s linear;
+}
+
+#checkbox:checked + .toggle-label .toggle-ball { 
+    transform: translateX(1rem);
+    background-color: #5fc3e4;
+}
